@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html>
+<head>
+<script src="vue.js"></script>
+</head>
+<body>
+<!--v-bind可以动态修改DOM的属性 -->
+<h1 id="title2" v-bind:title="message">Hello World</h1>
+<script>
+//注意，V必须为大写
+var app = new Vue({
+	el:"#title2",
+	data:{message:'这条信息是用bind产生的!'}
+})
+//可以在控制台中输入app.message。查看效果，还可以app.message='你好'
+</script>
+</body>
+</html>

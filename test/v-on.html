@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+<head>
+<script src="vue.js"></script>
+</head>
+<body>
+<!--v-on绑定事件 -->
+<h1>Hello World</h1>
+<div>
+	<div id="app5" style="color: red" v-on:click="reverseFont">{{message}}</div>
+</div>
+<script>
+//v-if的参数，控制节点是否生成（不是display是dom节点）
+var app = new Vue({
+	el:"#app5",
+	data:{message:'点击后这段文字将被翻转'},
+	methods:{
+		reverseFont: function(){
+			this.message = this.message.split('').reverse().join('');
+		}
+	}
+})
+</script>
+</body>
+</html>

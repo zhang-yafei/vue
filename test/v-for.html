@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+<head>
+<script src="vue.js"></script>
+</head>
+<body>
+<!--v-bind可以动态修改DOM的属性 -->
+<h1>Hello World</h1>
+<!--注意：节点id不能和重复节点在同一级。为重复节点的父节点 -->
+<div id="title4" style="color: red" >
+	<div  v-for="user in userList">{{user.name}}</div>
+</div>
+<script>
+//v-if的参数，控制节点是否生成（不是display是dom节点）
+var app = new Vue({
+	el:"#title4",
+	data:{userList:[
+		{name: 'Joey'},
+		{name: 'Harry'},
+		{name: 'Roxie'}
+	]}
+})
+</script>
+</body>
+</html>

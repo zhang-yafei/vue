@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+<head>
+<script src="vue.js"></script>
+</head>
+<body>
+<!--create,实例的生命周期研究 -->
+<h1>Hello World</h1>
+<div id="app6">
+	
+</div>
+<script>
+var app = new Vue({
+	el:"#app6",
+	data:{str:12345},
+	//组件的生命周期有以下钩子。
+	//beforeCreate,created.beforeMount,mounted.beforeUpdate,updated,activated,deactivated.beforeDestory,destoryed
+	created: function(){
+		console.log(this.str);
+	}
+})
+</script>
+</body>
+</html>

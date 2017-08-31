@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+<head>
+<script src="vue.js"></script>
+</head>
+<body>
+<!--v-model绑定事件 -->
+<h1>Hello World</h1>
+<div id="app6">
+	<p>{{message}}</p>
+	<input v-model="message"/>
+</div>
+<script>
+//
+var app = new Vue({
+	el:"#app6",
+	data:{message:'请输入任意文字'}
+})
+</script>
+</body>
+</html>

@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html>
+<head>
+<script src="vue.js"></script>
+</head>
+<body>
+<h1 id="title">{{message}}</h1>
+<script>
+//注意，V必须为大写
+var app = new Vue({
+	el:"#title",
+	data:{message:'Hello World!'}
+})
+//可以在控制台中输入app.message。查看效果，还可以app.message='你好'
+</script>
+</body>
+</html>

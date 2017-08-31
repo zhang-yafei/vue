@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+<head>
+<script src="vue.js"></script>
+</head>
+<body>
+<!--v-compent绑定事件 -->
+<h1>Hello World</h1>
+<div id="app6">
+	<ol>
+		<todo-list></todo-list>
+		<todo-list></todo-list>
+		<todo-list></todo-list>
+		<todo-list></todo-list>
+	</ol>
+</div>
+<script>
+//组件初试牛刀
+Vue.component("todo-list",{
+	template:'<li>这行句子是测试用的</li>'
+})
+var app = new Vue({
+	el:"#app6",
+	data:{message:'请输入任意文字'}
+})
+</script>
+</body>
+</html>

@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+<head>
+<script src="vue.js"></script>
+</head>
+<body>
+<!--v-compent绑定事件 -->
+<h1>Hello World</h1>
+<div id="app6">
+	<ol>
+		<todo-list v-for="user in userList"
+			v-bind:todo="user"
+			v-bind:key="user.id"
+		></todo-list>
+	</ol>
+</div>
+<script>
+//组件初试牛刀*2
+Vue.component("todo-list",{
+	props: ['todo'],
+	template:'<li>{{todo.text}}</li>'
+})
+var app = new Vue({
+	el:"#app6",
+	data:{userList:[
+		{id: 0,text:'YoungHarry'},
+		{id: 1,text:'Banana'},
+		{id: 2,text:'Roxie'}
+	]}
+})
+</script>
+</body>
+</html>

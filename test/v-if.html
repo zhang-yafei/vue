@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html>
+<head>
+<script src="vue.js"></script>
+</head>
+<body>
+<!--v-bind可以动态修改DOM的属性 -->
+<h1>Hello World</h1>
+<div id="title3" style="color: red" v-if="showFlag">这里是v-if控制的</div>
+<script>
+//v-if的参数，控制节点是否生成（不是display是dom节点）
+var app = new Vue({
+	el:"#title3",
+	data:{showFlag:true}
+})
+</script>
+</body>
+</html>
