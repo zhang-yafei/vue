@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+<head>
+<script src="../vue.js"></script>
+</head>
+<body>
+
+<h1>Hello World</h1>
+<div>
+	<!--研究表达式 -->
+	<div id="app5" style="color: red">{{number + 1}}{{ok ? "YES":"NO"}}
+	{{message.split("").reverse().join("")}}
+	</div>
+</div>
+<script>
+//v-if的参数，控制节点是否生成（不是display是dom节点）
+var app = new Vue({
+	el:"#app5",
+	data:{message:'点击后这段文字将被翻转',
+		number: 45,
+		ok: true
+	},
+})
+</script>
+</body>
+</html>

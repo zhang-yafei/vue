@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+<head>
+<script src="../vue.js"></script>
+</head>
+<body>
+
+<h1>Hello World</h1>
+<div>
+	<!--计算函数 -->
+	<div id="app1" style="color: red">{{reverMessage}}
+	</div>
+</div>
+<script>
+var app = new Vue({
+	el:"#app1",
+	data:{message:'点击后这段文字将被翻转',
+		number: 45,
+		ok: true
+	},
+	computed:{
+		reverMessage: function(){
+			return this.message.split("").reverse().join("");
+		}
+	}
+})
+</script>
+</body>
+</html>

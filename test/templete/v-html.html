@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+<head>
+<script src="../vue.js"></script>
+</head>
+<body>
+
+<h1>Hello World</h1>
+<div>
+	<!--v-html,可以在页面里插入html标签.但是用户的输入，最好不好想里面放 -->
+	<div id="app5" style="color: red" v-html="strHtml"></div>
+</div>
+<script>
+//v-if的参数，控制节点是否生成（不是display是dom节点）
+var app = new Vue({
+	el:"#app5",
+	data:{message:'点击后这段文字将被翻转',
+		strHtml: '<ol><li>第一行</li><li>第二行</li><li>第三行</li><li>第四行</li></ol>'
+	},
+})
+</script>
+</body>
+</html>

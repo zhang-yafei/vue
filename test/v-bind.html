@@ -4,8 +4,8 @@
 <script src="vue.js"></script>
 </head>
 <body>
-<!--v-bind可以动态修改DOM的属性 -->
-<h1 id="title2" v-bind:title="message">Hello World</h1>
+<!--v-bind可以动态修改DOM的属性，v-bind:可以省略为: -->
+<h1 id="title2" :title="message">Hello World</h1>
 <script>
 //注意，V必须为大写
 var app = new Vue({

@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html>
+<head>
+<script src="../vue.js"></script>
+</head>
+<body>
+
+<h1>Hello World</h1>
+<div>
+	<!--研究过滤器,过滤器可以在{{}}和v-bind中使用,链式过滤器 -->
+	<div id="app1" style="color: red">{{message | substrLeng | transfromAttr}}</div>
+	
+	<!--研究过滤器，带参数的过滤器 -->
+	<div id="app2" style="color: blue">{{message | substr(10)}}</div>
+</div>
+<script>
+//v-if的参数，控制节点是否生成（不是display是dom节点）
+var app = new Vue({
+	el:"#app1",
+	data:{message:'点击后这段文字将被翻转',
+		number: 45,
+		ok: true
+	},
+	filters: {
+		substrLeng: function(str){
+			if(str){
+				str = str.toString();
+				return str.slice(0,6);// 截取前5位
+			}else{
+				return '';
+			}
+		},
+		transfromAttr: function(str){
+			if(str){
+				return str.split("");// 转换为数组
+			}else{
+				return '';
+			}
+		}
+	}
+})
+
+var app2 = new Vue({
+	el:"#app2",
+	data:{message:'点击后这段文字将被翻转点击后这段文字将被翻转',
+		number: 45,
+		ok: true
+	},
+	filters: {
+		substr: function(str,num){
+			if(str && num){
+				str = str.toString();
+				return str.slice(0,num);// 返回前num位数字
+			}else{
+				return str;
+			}
+		}
+	}
+})
+</script>
+</body>
+</html>
