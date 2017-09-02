@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+<head>
+<script src="../vue.js"></script>
+</head>
+<body>
+
+<h1>Hello World</h1>
+<div>
+	<!--计算函数 -->
+	<div id="app1" style="color: red">{{fullName}}
+	</div>
+</div>
+<script>
+var app = new Vue({
+	el:"#app1",
+	data:{firstName:'Foo',
+		lastName: 'Bar',
+		fullName: 'Foo Bar'
+	},
+	watch:{
+		//当firstName或lasterName时。fullName自动改变
+		firstName: function(val){
+			this.fullName = val + ' ' + this.lastName
+		},
+		lastName: function(val){
+			this.fullName = this.firstName + ' ' + val
+		}
+	}
+})
+</script>
+</body>
+</html>

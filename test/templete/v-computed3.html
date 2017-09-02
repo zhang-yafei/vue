@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+<head>
+<script src="../vue.js"></script>
+</head>
+<body>
+
+<h1>Hello World</h1>
+<div>
+	<!--计算函数 -->
+	<div id="app1" style="color: red">{{fullName}}
+	</div>
+</div>
+<script>
+var app = new Vue({
+	el:"#app1",
+	data:{
+		firstName:'Foo',
+		lastName: 'Bar'	
+	},
+	computed:{
+		//当firstName或lasterName时。fullName自动改变
+		fullName: function(){
+			return this.firstName + ' ' + this.lastName
+		}
+	}
+})
+</script>
+</body>
+</html>

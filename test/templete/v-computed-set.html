@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+<head>
+<script src="../vue.js"></script>
+</head>
+<body>
+
+<h1>Hello World</h1>
+<div>
+	<!--计算函数 -->
+	<div id="app1" style="color: red">{{fullName}}
+	</div>
+</div>
+<script>
+var app = new Vue({
+	el:"#app1",
+	data:{
+		firstName:'Foo',
+		lastName: 'Bar'	
+	},
+	computed:{
+		//当firstName或lasterName时。fullName自动改变.增加set方法
+		fullName: {
+			get: function(){
+				return this.firstName + ' ' + this.lastName
+			},
+			//不设置set的话，不能直接赋值给fullName.并且只能为set，get关键字
+			set:function(newValue){
+				var names = newValue.split(" ");
+				this.firstName = names[0]
+				this.lasterName = names[names.length -1]
+			}
+		}
+	}
+})
+</script>
+</body>
+</html>
